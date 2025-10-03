@@ -1,3 +1,34 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-f1-car",
+      "description": "A formula 1 car on a race track",
+      "imageUrl": "https://images.unsplash.com/photo-1593166978275-5dbc8b293c3c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxmb3JtdWxhJTIwb25lfGVufDB8fHx8MTc1OTQ4NTY3NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "formula one"
+    },
+    {
+      "id": "feature-prediction",
+      "description": "AI data streams and charts",
+      "imageUrl": "https://images.unsplash.com/photo-1728995025396-b5141e209455?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkYXRhJTIwdmlzdWFsaXphdGlvbnxlbnwwfHx8fDE3NTk0NTQ0OTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "data visualization"
+    },
+    {
+      "id": "feature-dashboard",
+      "description": "A community forum interface",
+      "imageUrl": "https://images.unsplash.com/photo-1758411898021-ef0dadaaa295?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkYXNoYm9hcmQlMjB1aXxlbnwwfHx8fDE3NTk0NzY2NDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dashboard ui"
+    },
+    {
+      "id": "feature-simulation",
+      "description": "3D model of a car with airflow lines",
+      "imageUrl": "https://images.unsplash.com/photo-1634712282287-14ed57b9cc89?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHwzZCUyMG1vZGVsfGVufDB8fHx8MTc1OTQ4NDMxN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "3d model"
+    },
+    {
+      "id": "user-avatar",
+      "description": "User avatar placeholder",
+      "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwZXJzb24lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTkzOTU3Nzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person portrait"
+    }
+  ]
 }
