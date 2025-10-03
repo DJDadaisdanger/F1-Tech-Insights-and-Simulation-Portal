@@ -29,9 +29,9 @@ export function PredictionClient() {
   const form = useForm<PredictionFormValues>({
     resolver: zodResolver(predictionSchema),
     defaultValues: {
-      historicalData: 'Past 5 races at this track show a clear advantage for cars with high straight-line speed. Red team has won 3 of the last 5.',
-      carSpecifications: 'Blue team has a new engine upgrade, improving power output by 3%. Red team is running a lower-drag aerodynamic package.',
-      trackConditions: 'Dry, sunny, 28°C air temp, 45°C track temp. Low probability of rain.',
+      historicalData: 'In recent races at Silverstone, Mercedes has shown strong performance due to the track\'s high-speed corners. Max Verstappen has won 2 of the last 3 races here.',
+      carSpecifications: 'Ferrari is introducing a new front wing design for better aerodynamic balance. Red Bull Racing has a power unit upgrade, expected to boost top speed on the straights.',
+      trackConditions: 'Dry conditions expected for the race. Air temperature at 22°C, track temperature around 35°C. Medium to high tire degradation is anticipated.',
     },
   });
 
