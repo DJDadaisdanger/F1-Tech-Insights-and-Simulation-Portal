@@ -1,3 +1,4 @@
+
 'use client'
 
 import { SidebarTrigger } from "@/components/ui/sidebar"
@@ -6,7 +7,7 @@ import { usePathname } from "next/navigation"
 const pages = [
   { path: '/', title: 'Home' },
   { path: '/prediction', title: 'AI Race Predictions' },
-  { path: '/dashboard', title: 'Community Dashboard' },
+  { path: '/blog', title: 'Blog' },
   { path: '/simulation', title: 'Aerodynamic Simulations' },
 ]
 

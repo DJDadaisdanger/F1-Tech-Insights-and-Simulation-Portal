@@ -13,10 +13,10 @@
       "imageHint": "data visualization"
     },
     {
-      "id": "feature-dashboard",
-      "description": "A community forum interface",
-      "imageUrl": "https://images.unsplash.com/photo-1758411898021-ef0dadaaa295?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkYXNoYm9hcmQlMjB1aXxlbnwwfHx8fDE3NTk0NzY2NDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "dashboard ui"
+      "id": "feature-blog",
+      "description": "A person writing in a notebook",
+      "imageUrl": "https://images.unsplash.com/photo-1455390582262-044cdead277a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxibG9nJTIwd3JpdGluZ3xlbnwwfHx8fDE3NTk1NjYwMjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "blog writing"
     },
     {
       "id": "feature-simulation",

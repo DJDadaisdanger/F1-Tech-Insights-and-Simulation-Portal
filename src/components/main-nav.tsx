@@ -1,15 +1,16 @@
+
 'use client';
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { F1Car } from "@/components/icons";
 import { SidebarHeader, SidebarContent, SidebarMenu, SidebarMenuItem, SidebarMenuButton } from "@/components/ui/sidebar";
-import { BrainCircuit, Gauge, LayoutDashboard, Wind } from "lucide-react";
+import { BrainCircuit, Newspaper, LayoutDashboard, Wind } from "lucide-react";
 
 const links = [
     { href: '/', label: 'Home', icon: LayoutDashboard },
     { href: '/prediction', label: 'AI Predictions', icon: BrainCircuit },
-    { href: '/dashboard', label: 'Community', icon: Gauge },
+    { href: '/blog', label: 'Blog', icon: Newspaper },
     { href: '/simulation', label: 'Simulations', icon: Wind },
 ];
 

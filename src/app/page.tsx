@@ -1,9 +1,10 @@
+
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { ArrowRight, BrainCircuit, Gauge, Wind } from "lucide-react";
+import { ArrowRight, BrainCircuit, Newspaper, Wind } from "lucide-react";
 
 const features = [
   {
@@ -14,11 +15,11 @@ const features = [
     icon: BrainCircuit,
   },
   {
-    id: "feature-dashboard",
-    title: "Community Hub",
-    description: "Share strategies, discuss engineering choices, and connect with other F1 enthusiasts.",
-    href: "/dashboard",
-    icon: Gauge,
+    id: "feature-blog",
+    title: "Blog",
+    description: "Read the latest analysis, strategies, and engineering deep-dives from F1 experts.",
+    href: "/blog",
+    icon: Newspaper,
   },
   {
     id: "feature-simulation",
@@ -51,11 +52,11 @@ export default function Home() {
             The Ultimate F1 Technical Edge
           </h1>
           <p className="mt-4 max-w-2xl text-lg md:text-xl text-foreground/80">
-            Dive deep into the world of Formula 1 with AI-powered predictions, interactive simulations, and a vibrant community.
+            Dive deep into the world of Formula 1 with AI-powered predictions, interactive simulations, and expert blog content.
           </p>
           <Button asChild size="lg" className="mt-8 font-bold">
-            <Link href="/dashboard">
-              Explore Features <ArrowRight className="ml-2" />
+            <Link href="/blog">
+              Read the Blog <ArrowRight className="ml-2" />
             </Link>
           </Button>
         </div>
