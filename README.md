@@ -8,11 +8,7 @@ Welcome to the F1 Tech Insights & Simulation Portal, a full-stack web applicatio
 
 ### 🚀 Live Application
 
-**[Link to Deployed Application]** _(Please add your deployment link here)_
-
-### 🎬 Demo Video
-
-**[Link to Demo Video]** _(Please add your video link here)_
+**[Link to Deployed Application](https://f1-tech-insights-and-simulation-por.vercel.app/)**
 
 ---
 
