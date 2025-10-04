@@ -11,7 +11,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-import { Loader2, Trophy, Zap, Users } from 'lucide-react';
+import { Loader2, Trophy, Zap, Users, WandSparkles } from 'lucide-react';
+import { Separator } from '@/components/ui/separator';
 
 const predictionSchema = z.object({
   historicalData: z.string().min(10, 'Please provide more detailed historical data.'),
@@ -21,6 +22,34 @@ const predictionSchema = z.object({
 
 type PredictionFormValues = z.infer<typeof predictionSchema>;
 
+const samplePrompts: PredictionFormValues[] = [
+  {
+    historicalData:
+      'In recent races at Silverstone, Mercedes has shown strong performance due to the track\'s high-speed corners. Max Verstappen has won 2 of the last 3 races here.',
+    carSpecifications:
+      'Ferrari is introducing a new front wing design for better aerodynamic balance. Red Bull Racing has a power unit upgrade, expected to boost top speed on the straights.',
+    trackConditions:
+      'Dry conditions expected for the race. Air temperature at 22°C, track temperature around 35°C. Medium to high tire degradation is anticipated.',
+  },
+  {
+    historicalData:
+      "Monaco is a circuit where qualifying position is king. Overtaking is notoriously difficult. Charles Leclerc has secured pole position in the last two events here but has had bad luck in the races. Red Bull has a strong record of converting good grid positions into wins.",
+    carSpecifications:
+      "The McLaren has shown exceptional agility in slow-speed corners this season. Mercedes is bringing a shorter wheelbase car which should excel here. Maximum downforce packages will be used by all teams.",
+    trackConditions:
+      "Classic sunny Monaco weather. Track temperature will be high, leading to thermal degradation. The track surface is smooth, so tire wear is less of a concern than managing temperature.",
+  },
+  {
+    historicalData:
+      "Spa-Francorchamps is a circuit that rewards bravery and power. Rain is a common feature and often shuffles the pack. Last year's race saw a surprise winner from the midfield after a late-race downpour.",
+    carSpecifications:
+      "The Williams car has a very efficient low-drag setup, making it incredibly fast on the straights. The Aston Martin has struggled with tire warm-up in cool conditions.",
+    trackConditions:
+      "High chance of rain (80%) for the race. The temperature is cool, around 15°C. If it rains, the track will be treacherous, especially through Eau Rouge and Raidillon. Visibility will be poor.",
+  },
+];
+
+
 export function PredictionClient() {
   const [prediction, setPrediction] = useState<PredictRaceOutcomeOutput | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -28,11 +57,7 @@ export function PredictionClient() {
 
   const form = useForm<PredictionFormValues>({
     resolver: zodResolver(predictionSchema),
-    defaultValues: {
-      historicalData: 'In recent races at Silverstone, Mercedes has shown strong performance due to the track\'s high-speed corners. Max Verstappen has won 2 of the last 3 races here.',
-      carSpecifications: 'Ferrari is introducing a new front wing design for better aerodynamic balance. Red Bull Racing has a power unit upgrade, expected to boost top speed on the straights.',
-      trackConditions: 'Dry conditions expected for the race. Air temperature at 22°C, track temperature around 35°C. Medium to high tire degradation is anticipated.',
-    },
+    defaultValues: samplePrompts[0],
   });
 
   async function onSubmit(data: PredictionFormValues) {
@@ -53,12 +78,16 @@ export function PredictionClient() {
     }
   }
 
+  const loadSample = (sample: PredictionFormValues) => {
+    form.reset(sample);
+  };
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
       <Card>
         <CardHeader>
           <CardTitle className="font-headline">Generate Race Prediction</CardTitle>
-          <CardDescription>Fill in the details below to get an AI-powered race outcome prediction.</CardDescription>
+          <CardDescription>Fill in the details below to get an AI-powered race outcome prediction, or load a sample scenario.</CardDescription>
         </CardHeader>
         <CardContent>
           <Form {...form}>
@@ -102,6 +131,18 @@ export function PredictionClient() {
                   </FormItem>
                 )}
               />
+
+              <Separator />
+
+              <div>
+                <h3 className="text-sm font-medium mb-2 flex items-center"><WandSparkles className="mr-2 h-4 w-4" /> Sample Scenarios</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                  <Button type="button" variant="outline" onClick={() => loadSample(samplePrompts[0])}>Silverstone</Button>
+                  <Button type="button" variant="outline" onClick={() => loadSample(samplePrompts[1])}>Monaco</Button>
+                  <Button type="button" variant="outline" onClick={() => loadSample(samplePrompts[2])}>Wet Spa</Button>
+                </div>
+              </div>
+              
               <Button type="submit" disabled={isLoading} className="w-full font-bold">
                 {isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Zap className="mr-2 h-4 w-4" />}
                 Predict Outcome
