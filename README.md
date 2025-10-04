@@ -1,6 +1,6 @@
 # F1 Tech Insights & Simulation Portal
 
-**Submission for the CodeKong Hackathon**
+
 
 Welcome to the F1 Tech Insights & Simulation Portal, a full-stack web application built for Formula 1 enthusiasts, aspiring engineers, and data analysts. Our platform offers a unique blend of AI-powered predictions, interactive 3D simulations, and expert blog content, providing a one-stop shop for diving deep into the technical world of F1.
 
