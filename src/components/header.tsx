@@ -1,25 +1,34 @@
 
 'use client'
 
-import { SidebarTrigger } from "@/components/ui/sidebar"
-import { usePathname } from "next/navigation"
-
-const pages = [
-  { path: '/', title: 'Home' },
-  { path: '/prediction', title: 'AI Race Predictions' },
-  { path: '/blog', title: 'Blog' },
-  { path: '/simulation', title: 'Aerodynamic Simulations' },
-]
+import { MainNav } from "@/components/main-nav"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Button } from "./ui/button"
+import { Menu } from "lucide-react"
 
 export function Header() {
-  const pathname = usePathname()
-  const pageTitle = pages.find(p => pathname.startsWith(p.path) && p.path !== '/')?.title || pages.find(p => p.path === pathname)?.title || 'F1 Insights';
 
   return (
-    <header className="flex h-14 items-center gap-4 border-b bg-background/60 backdrop-blur-sm px-4 lg:h-[60px] lg:px-6 sticky top-0 z-10 shrink-0">
-      <SidebarTrigger className="md:hidden" />
+    <header className="flex h-16 items-center gap-4 border-b bg-background/60 backdrop-blur-sm px-4 lg:px-6 sticky top-0 z-50 shrink-0">
       <div className="flex-1">
-        <h1 className="text-lg font-headline font-semibold">{pageTitle}</h1>
+        <div className="hidden md:flex">
+         <MainNav />
+        </div>
+        <Sheet>
+          <SheetTrigger asChild>
+            <Button
+              variant="outline"
+              size="icon"
+              className="shrink-0 md:hidden"
+            >
+              <Menu className="h-5 w-5" />
+              <span className="sr-only">Toggle navigation menu</span>
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="left">
+            <MainNav />
+          </SheetContent>
+        </Sheet>
       </div>
     </header>
   )

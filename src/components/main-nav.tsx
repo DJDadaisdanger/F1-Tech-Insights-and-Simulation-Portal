@@ -4,8 +4,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { F1Car } from "@/components/icons";
-import { SidebarHeader, SidebarContent, SidebarMenu, SidebarMenuItem, SidebarMenuButton } from "@/components/ui/sidebar";
 import { BrainCircuit, Newspaper, LayoutDashboard, Wind } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const links = [
     { href: '/', label: 'Home', icon: LayoutDashboard },
@@ -17,30 +17,29 @@ const links = [
 export function MainNav() {
     const pathname = usePathname();
     return (
-        <>
-            <SidebarHeader>
-                <div className="flex items-center gap-2">
-                    <F1Car className="w-8 h-8 text-primary" />
-                    <div className="flex flex-col">
-                        <h2 className="text-lg font-headline font-semibold tracking-tighter">F1 Insights</h2>
-                        <p className="text-xs text-muted-foreground">Tech & Sim Portal</p>
-                    </div>
+        <nav className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6 text-sm font-medium">
+            <Link href="/" className="flex items-center gap-2 font-headline font-semibold text-lg md:text-base">
+                <F1Car className="w-8 h-8 text-primary" />
+                <div className="flex flex-col">
+                    <h2 className="text-lg font-headline font-semibold tracking-tighter">F1 Insights</h2>
+                    <p className="text-xs text-muted-foreground -mt-1">Tech & Sim Portal</p>
                 </div>
-            </SidebarHeader>
-            <SidebarContent>
-                <SidebarMenu>
-                    {links.map((link) => (
-                        <SidebarMenuItem key={link.href}>
-                            <SidebarMenuButton asChild isActive={pathname === link.href}>
-                                <Link href={link.href}>
-                                    <link.icon className="w-5 h-5" />
-                                    <span>{link.label}</span>
-                                </Link>
-                            </SidebarMenuButton>
-                        </SidebarMenuItem>
-                    ))}
-                </SidebarMenu>
-            </SidebarContent>
-        </>
+            </Link>
+            <div className="flex flex-col md:flex-row gap-4 md:gap-5 md:ml-6 mt-4 md:mt-0">
+            {links.map((link) => (
+                <Link 
+                    key={link.href} 
+                    href={link.href}
+                    className={cn(
+                        "flex items-center gap-2 transition-colors hover:text-primary",
+                        pathname === link.href ? "text-primary" : "text-muted-foreground"
+                    )}
+                    >
+                    <link.icon className="w-5 h-5 md:hidden" />
+                    <span>{link.label}</span>
+                </Link>
+            ))}
+            </div>
+        </nav>
     )
 }

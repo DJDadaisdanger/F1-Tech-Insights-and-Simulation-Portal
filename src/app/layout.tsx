@@ -1,9 +1,8 @@
+
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
-import { SidebarProvider, Sidebar, SidebarInset } from '@/components/ui/sidebar';
-import { MainNav } from '@/components/main-nav';
 import { Header } from '@/components/header';
 
 export const metadata: Metadata = {
@@ -27,19 +26,12 @@ export default function RootLayout({
         />
       </head>
       <body className={cn('font-body antialiased min-h-screen bg-background')}>
-        <SidebarProvider>
-          <Sidebar>
-            <MainNav />
-          </Sidebar>
-          <SidebarInset>
-            <div className="flex flex-col h-full">
-              <Header />
-              <main className="flex-1 p-4 md:p-8 overflow-auto">
-                {children}
-              </main>
-            </div>
-          </SidebarInset>
-        </SidebarProvider>
+        <div className="flex flex-col h-full">
+          <Header />
+          <main className="flex-1 p-4 md:p-8 overflow-auto">
+            {children}
+          </main>
+        </div>
         <Toaster />
       </body>
     </html>
