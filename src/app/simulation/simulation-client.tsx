@@ -20,7 +20,7 @@ export function SimulationClient() {
       execution-while-not-rendered="true"
       //@ts-ignore
       web-share="true"
-      src="https://sketchfab.com/3d-models/ansys-multi-gpu-solver-in-fluent-8b0a2d3da2ed41a2ad56080efa598f2c#embed"
+      src="https://sketchfab.com/models/8b0a2d3da2ed41a2ad56080efa598f2c/embed"
       className="w-full h-full"
     >
     </iframe>
