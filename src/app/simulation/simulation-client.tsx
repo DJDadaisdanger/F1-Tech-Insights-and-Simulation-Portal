@@ -7,6 +7,7 @@ export function SimulationClient() {
       title="F1 car" 
       frameBorder="0" 
       allowFullScreen
+      sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
       //@ts-ignore
       mozallowfullscreen="true" 
       //@ts-ignore
