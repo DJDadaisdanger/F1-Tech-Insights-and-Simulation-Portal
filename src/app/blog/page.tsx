@@ -19,10 +19,11 @@ import { blogPosts } from "@/lib/blog-data";
 export default function BlogPage() {
   const [searchTerm, setSearchTerm] = useState("");
 
+  const lowerSearchTerm = searchTerm.toLowerCase();
   const filteredPosts = blogPosts.filter(post => 
-    post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    post.content.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    post.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
+    post.title.toLowerCase().includes(lowerSearchTerm) ||
+    post.content.toLowerCase().includes(lowerSearchTerm) ||
+    post.tags.some(tag => tag.toLowerCase().includes(lowerSearchTerm))
   );
 
   return (
