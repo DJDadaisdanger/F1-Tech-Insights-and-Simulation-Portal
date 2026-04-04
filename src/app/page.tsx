@@ -6,6 +6,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { ArrowRight, BrainCircuit, Newspaper, Wind } from "lucide-react";
 
+const placeholderImagesMap = new Map(PlaceHolderImages.map(p => [p.id, p]));
+
 const features = [
   {
     id: "feature-prediction",
@@ -31,7 +33,7 @@ const features = [
 ];
 
 export default function Home() {
-  const heroImage = PlaceHolderImages.find(p => p.id === 'hero-f1-car');
+  const heroImage = placeholderImagesMap.get('hero-f1-car');
 
   return (
     <div className="flex flex-col gap-8">
@@ -65,7 +67,7 @@ export default function Home() {
       <section className="w-full">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {features.map((feature) => {
-            const featureImage = PlaceHolderImages.find(p => p.id === feature.id);
+            const featureImage = placeholderImagesMap.get(feature.id);
             return (
               <Card key={feature.id} className="flex flex-col hover:border-primary transition-colors duration-300 transform hover:-translate-y-1">
                 <CardHeader>
